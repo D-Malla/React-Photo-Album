@@ -166,6 +166,11 @@ aside ul li {
   width: 900px;
 }
 
+.singlePicture img {
+  height: 225px;
+  width: 225px;
+}
+
 .changePhoto.left i {
   font-size: 200px;
   position: relative;

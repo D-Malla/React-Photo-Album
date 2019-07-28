@@ -60,7 +60,7 @@ class SelectedAlbum extends React.Component {
           </section>
           <section className='rows'>
             {this.state.photos.map(photo => ( 
-            <Link to='/photo'>
+            <Link to={"/photo/" + photo.name}>
               <div className="picture">
                 <div>
                   <img src={photo.photo} alt='pic' />
