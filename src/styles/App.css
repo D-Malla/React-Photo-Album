@@ -7,7 +7,7 @@ html {box-sizing:border-box;}
 }
 
 body {
-  background: purple;
+  background: #FFFACC;
 }
 
 a {
@@ -21,7 +21,7 @@ a:visited {
 /* Albums Main Page */
 
 #albumHeader {
-  background: red;
+  background: #53131E;
   height: 100px;
   margin: 0;
   padding-top: 45px;
@@ -52,7 +52,8 @@ a:visited {
 }
 
 .rows .album {
-  background: yellow;
+  background: #5A464C;
+  border-radius: 10px;
   font-size: 20px;
   height: 275px;
   margin: 20px 60px;
@@ -62,6 +63,7 @@ a:visited {
 }
 
 .rows .album img {
+  border-radius: 10px;
   height: 225px;
   width: 225px;
 }
@@ -72,14 +74,13 @@ a:visited {
 
 /* Selected Album */
 #selectedAlbumHeader {
-  background: red;
+  background: #53131E;
   height: 100px;
   margin: 0;
   width: 100%;
 }
 
 #selectedAlbumHeader #albumArrow {
-
   left: 50px;
   position: relative;
   top: 30px;
@@ -100,7 +101,7 @@ main {
 
 }
 aside {
-  background: pink;
+  background: #53131E;
   height: 100%;
   padding: 0;
   width: 200px;
@@ -119,7 +120,8 @@ aside ul li {
 }
 
 .rows .picture {
-  background: yellow;
+  background: #5A464C;
+  border-radius: 10px;
   font-size: 20px;
   height: 275px;
   margin: 20px 60px;
@@ -136,7 +138,7 @@ aside ul li {
 /* Photo */
 
 #picHeader {
-  background: teal;
+  background: #53131E;
   border-radius: 20px;
   margin: 10px auto;
   height: 100px;
@@ -160,13 +162,15 @@ aside ul li {
 }
 
 .singlePicture {
-  background: green;
+  background: #5A464C;
+  border-radius: 10px;
   height: 500px;
   margin: 50px auto;
   width: 900px;
 }
 
 .singlePicture img {
+  border-radius: 10px;
   height: 225px;
   width: 225px;
 }

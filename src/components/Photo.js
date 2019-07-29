@@ -8,62 +8,53 @@ import '../styles/App.css'
 
 class Photo extends React.Component {  
   state = {
-    albums: [],
     photos: [],
     photoName: ''
-}
+
+  }
 
 
-componentDidMount() {
-  const name = this.props.match.params.name
-  axios.get(`/api/photos/${name}?_embed=albums`).then(resp => {
-    this.setState({
-      albums: resp.data.albums,
-      photos: resp.data.photos,
-      photoName:resp.data.name
-
+  componentDidMount() {
+    const id = this.props.match.params.id
+    axios.get(`/api/photos/${id}`).then(resp => {
+      this.setState({
+       photoName:resp.data.name,
+       photos: resp.data
+      })
     })
-  })
+  }
 
-  // axios.get("/api/albums").then(resp => {
-  //   this.setState({
-  //    photos: resp.data
-  //   })
-  // })
-
-}
-componentWillReceiveProps(newprops){
-  const name = newprops.match.params.name
-  axios.get(`/api/photos/${name}?_embed=albums`).then(resp => {
-    this.setState({
-     photoName:resp.data.name,
-     photos: resp.data.photos
+  componentWillReceiveProps(newprops){
+    const id = newprops.match.params.id
+    axios.get(`/api/photos/${id}`).then(resp => {
+      console.log(axios)
+      this.setState({
+       photoName:resp.data.name,
+       photos: resp.data
+      })
     })
-  })
-}
+  }
 
   render() {
     return (
       <div>
+        <div>
         <section>
-        <header id='picHeader'>
-        {this.state.photos.map(photo=> (
-          <div>       
-            <Link to={'/SelectedAlbum/' + photo.albumId}><span id='selectedAlbumArrow'><MaterialIcon icon="arrow_back" /></span></Link>
-          <h1>{photo.id}</h1>
-          </div>
-        ))}
-        </header>
-              <div className="singlePicture">
-            {this.state.photos.map(photo => (
-            <div>
-              <img src={photo.photo} alt='pic'/>
+          <header id='picHeader'>
+            <div>       
+              <Link to={'/SelectedAlbum/' + this.state.photos.albumId}><span id='selectedAlbumArrow'><MaterialIcon icon="arrow_back" /></span></Link>
+            <h1>{this.state.photoName}</h1>
             </div>
-              ))}
-              <span className='changePhoto left'><MaterialIcon icon="chevron_left" /></span>
-              <span className='changePhoto right'><MaterialIcon icon="chevron_right" /></span>
-          </div>
+          </header>
+                <div className="singlePicture">      
+                <div>
+                <img src={this.state.photos.id} alt='pic'/>
+              </div>
+                <span className='changePhoto left'><MaterialIcon icon="chevron_left" /></span>
+                <span className='changePhoto right'><MaterialIcon icon="chevron_right" /></span>
+            </div>
         </section>
+        </div>
       </div>
     )
   }
