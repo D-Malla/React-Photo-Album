@@ -171,20 +171,6 @@ aside ul li {
 
 .singlePicture img {
   border-radius: 10px;
-  height: 225px;
-  width: 225px;
-}
-
-.changePhoto.left i {
-  font-size: 200px;
-  position: relative;
-  right: 200px;
-  bottom: 350px;
-}
-
-.changePhoto.right i {
-  font-size: 200px;
-  position: relative;
-  left: 700px;
-  bottom: 350px;
+  height: 500px;
+  width: 900px;
 }

@@ -1,7 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import App from './App'
-import Photo from './Photo'
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 import 'normalize.css/normalize.css'
@@ -60,7 +58,7 @@ class SelectedAlbum extends React.Component {
           </section>
           <section className='rows'>
             {this.state.photos.map(photo => ( 
-            <Link to={"/photo/" + photo.name}>
+            <Link to={"/photo/" + photo.id}>
               <div className="picture">
                 <div>
                   <img src={photo.photo} alt='pic' />

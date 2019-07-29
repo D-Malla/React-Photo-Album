@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import App from './App'
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import '../styles/App.css'
@@ -10,7 +9,6 @@ class Albums extends React.Component {
     albums: []
 
   }
-
 
   componentDidMount() {
     axios.get("/api/albums").then(resp => {
